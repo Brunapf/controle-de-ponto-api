@@ -27,3 +27,13 @@ docker-compose up --build --force-recreate
 ### A aplicação possui:
     - GET  
     - POST
+
+### Sonarqube 
+
+Acesse o Sonar pelo endereço:
+
+> http://localhost:9000
+
+Usuário e senha padrão: 
+
+> admin
