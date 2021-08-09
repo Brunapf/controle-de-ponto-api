@@ -1,16 +1,14 @@
 package br.com.controleponto.controledeponto.response;
 
-import br.com.controleponto.controledeponto.entity.Batida;
+import br.com.controleponto.controledeponto.entity.BatidaEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class BatidaResponse {
 
     @JsonProperty("id_registro")
@@ -19,8 +17,8 @@ public class BatidaResponse {
     @JsonProperty("entrada1")
     private LocalDateTime entrada1;
 
-    public BatidaResponse(Batida batida) {
-        this.id = batida.getId();
-        this.entrada1 = batida.getEntrada1();
+    public BatidaResponse(BatidaEntity batidaEntity) {
+        this.id = batidaEntity.getId();
+        this.entrada1 = batidaEntity.getEntrada1();
     }
 }

@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "18707a9a-fae0-4cc7-b67c-6b8b461ab8f0",
+		"name": "Controle-Ponto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar Batidas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/batidas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"batidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Batida",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dataHora\": \"2021-08-06T14:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/batidas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"batidas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -5,7 +5,6 @@ import br.com.controleponto.controledeponto.response.BatidaResponse;
 import br.com.controleponto.controledeponto.service.BatidaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +27,4 @@ public class BatidasController {
     public ResponseEntity<Object> saveBatida(@RequestBody BatidaRequest request) throws Exception{
         return batidaService.salvar(request);
     }
-
-
 }

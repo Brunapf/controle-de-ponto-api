@@ -1,11 +1,11 @@
 package br.com.controleponto.controledeponto.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MensagemResponse {
 
     @JsonProperty("mensagem")

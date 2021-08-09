@@ -58,6 +58,7 @@
 			<artifactId>springfox-swagger2</artifactId>
 			<version>${springfox.swagger2.version}</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>

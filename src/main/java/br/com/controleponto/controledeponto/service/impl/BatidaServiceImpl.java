@@ -1,6 +1,6 @@
 package br.com.controleponto.controledeponto.service.impl;
 
-import br.com.controleponto.controledeponto.entity.Batida;
+import br.com.controleponto.controledeponto.entity.BatidaEntity;
 import br.com.controleponto.controledeponto.repository.BatidaRepository;
 import br.com.controleponto.controledeponto.request.BatidaRequest;
 import br.com.controleponto.controledeponto.response.BatidaResponse;
@@ -50,13 +50,13 @@ public class BatidaServiceImpl implements BatidaService {
             return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
         }
 
-        List<Batida> batidasResgistradas = repository.buscarPorBatida(request.getDataHora());
+        List<BatidaEntity> batidasResgistradas = repository.buscarPorBatida(request.getDataHora());
         if(!batidasResgistradas.isEmpty()){
             response.setMensagem("Horário já registrado");
             return new ResponseEntity<>(response, HttpStatus.CONFLICT);
         }
 
-        Batida entity = new Batida();
+        BatidaEntity entity = new BatidaEntity();
         entity.setEntrada1(request.getDataHora());
         repository.save(entity);
         response.setMensagem("Created");
