@@ -10,7 +10,7 @@ O sistema recebe um horário e faz seguintes validações:
 - [X] Verifica se o dia da batidaEntity de ponto é final de semana ( Sábado ou Domingo)
 - [X] Verifica se há até 4 batidas em um mesmo dia (caso já tenha 4 não deixa cadastrar)
 - [X] Verifica batidas duplicadas (batidaEntity com mesma data e horário)
-- [ ] Verifica se tem no mínimo 1 hora de almoço.
+- [X] Verifica se tem no mínimo 1 hora de almoço.
 
 Para rodar o sistema execute os comandos abaixo na pasta raiz do projeto.
 

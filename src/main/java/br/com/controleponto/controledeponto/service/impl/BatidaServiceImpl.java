@@ -56,6 +56,17 @@ public class BatidaServiceImpl implements BatidaService {
             return new ResponseEntity<>(response, HttpStatus.CONFLICT);
         }
 
+       List<BatidaEntity> batidasPorData = repository.buscarBatidasPorData(request.getDataHora().toLocalDate());
+        if(!batidasPorData.isEmpty()){
+            for(BatidaEntity batida: batidasPorData){
+               int qtd  = repository.confereHorarioMenorUmaHora(request.getDataHora(),batida.getEntrada1());
+                if(qtd == 1){
+                    response.setMensagem("Deve haver no mínimo 1 hora de almoço");
+                    return new ResponseEntity<>(response, HttpStatus.FORBIDDEN);
+                }
+            }
+        }
+
         BatidaEntity entity = new BatidaEntity();
         entity.setEntrada1(request.getDataHora());
         repository.save(entity);

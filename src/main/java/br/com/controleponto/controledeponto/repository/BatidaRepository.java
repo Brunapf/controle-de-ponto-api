@@ -15,6 +15,12 @@ public interface BatidaRepository extends JpaRepository<BatidaEntity, Integer> {
     @Query(value= "SELECT bat FROM BatidaEntity bat WHERE bat.entrada1 = ?1 ")
     List<BatidaEntity> buscarPorBatida(LocalDateTime entrada);
 
-    @Query(value = "select COUNT(entrada1)  FROM batidas WHERE DATE(entrada1) = ?1  ", nativeQuery = true)
+    @Query(value = "SELECT COUNT(entrada1)  FROM batidas WHERE DATE(entrada1) = ?1  ", nativeQuery = true)
     Integer buscarQuantidadeBatidas(LocalDate data);
+
+    @Query(value = "SELECT * FROM batidas WHERE DATE(entrada1) = ?1 ", nativeQuery = true)
+    List<BatidaEntity> buscarBatidasPorData(LocalDate data);
+
+    @Query(value = "SELECT  IF(TIMEDIFF(?1, ?2) < '00:60:00', 1, 0) AS DIFERENCA",nativeQuery = true)
+    int confereHorarioMenorUmaHora(LocalDateTime dataHora, LocalDateTime entrada1);
 }
