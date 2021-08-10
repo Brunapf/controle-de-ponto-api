@@ -17,7 +17,7 @@ Para rodar o sistema execute os comandos abaixo na pasta raiz do projeto.
 
 ## Compilar o projeto
 ```sh
-./mvnw.cmd clean install
+mvn clean install
 ```
 
 ## Subindo a aplicação com Docker-compose
